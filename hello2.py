@@ -1,4 +1,4 @@
-#!/usr/bin/env
+#!/usr/bin/env python3
 
 name = input("WHAT IS YOUR NAME? ")
 print("HELLO, {}!".format(name.upper()))

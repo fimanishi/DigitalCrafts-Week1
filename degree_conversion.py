@@ -1,4 +1,4 @@
-#!/usr/bin/env
+#!/usr/bin/env python3
 
 def to_farenheit(degc):
     degf = degc*1.8 + 32

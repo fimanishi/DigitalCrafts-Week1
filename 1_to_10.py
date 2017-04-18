@@ -1,4 +1,4 @@
-#!/usr/env/bin
+#!/usr/env/bin python3
 
 number = 1;
 
