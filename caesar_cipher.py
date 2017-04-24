@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import sys
+
 def caesar_cipher_encrypt(text, key):
     encrypted = ""
     for i in text:
@@ -7,6 +9,8 @@ def caesar_cipher_encrypt(text, key):
             letter_ascii = ord(i.upper()) + key
             if letter_ascii > 90:
                 to_append = chr(ord(i)+key-26)
+            elif letter_ascii < 65:
+                to_append = chr(ord(i)+key+26)
             else:
                 to_append = chr(ord(i)+key)
         else:
@@ -20,7 +24,9 @@ def caesar_cipher_decrypt(text, key):
         if ord(i.upper()) >= 65 and ord(i.upper()) <= 90:
             letter_ascii = ord(i.upper()) - key
             if letter_ascii < 65:
-                to_append = chr(ord(i)+key+26)
+                to_append = chr(ord(i)-key+26)
+            elif letter_ascii > 90:
+                to_append = chr(ord(i)-key-26)
             else:
                 to_append = chr(ord(i)-key)
         else:
@@ -28,4 +34,6 @@ def caesar_cipher_decrypt(text, key):
         decrypted += to_append
     return decrypted
 
-print(caesar_cipher_decrypt("efgfoe uif fbtu xbmm pg uif dbtumf",1))
+if __name__ == "__main__":
+    answer = "Gh Edkhod gnv zqd xnt cnhmf?"
+    print(caesar_cipher_decrypt(answer,-1))
